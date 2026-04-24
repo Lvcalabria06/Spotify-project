@@ -1,19 +1,16 @@
 import express from "express";
 import cors from "cors";
-import helmet from "helmet";
-import morgan from "morgan";
+import { router } from "./src/routes";
 import dotenv from "dotenv";
+import { prisma } from "./src/config/PrismaClient";
 
-
-
+dotenv.config();
 const app = express();
+app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('API rodando 🚀');
-});
+app.use("/api", router);
 
 app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000 🚀');
-  console.log('👉 Acesse: http://localhost:3000');
+  console.log("http://localhost:3000");
 });

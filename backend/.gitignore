@@ -18,6 +18,7 @@ dist/
 build/
 .next/
 out/
+generated/
 
 # Arquivos do sistema (Mac/Windows)
 .DS_Store
